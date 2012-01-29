@@ -28,8 +28,8 @@ $p = array(
     "message" => "投稿てすとテストTEST",
     "picture" => "http://k.yimg.jp/images/top/sp/logo.gif",
     "link" => "http://www.yahoo.co.jp/",
-    "name" => "テストアプリほげほげ",
-    "description" => "てすてすてすててててててててt"
+    "name" => "テストほげほげ",
+    "description" => "投稿てすてすてすててててててててt"
 );
 
 // user wall

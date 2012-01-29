@@ -40,9 +40,6 @@ class FacebookGraphAPIUtil
         return $url;
     }
 
-    /**
-     *
-     */
     public function getAccessToken($code){
 
         $p = array(
@@ -60,9 +57,6 @@ class FacebookGraphAPIUtil
         return $this->accessToken;
     }
 
-    /**
-     *
-     */
     public function getFbUserData($accessToken){
 
         $graphUrl = FB_GRAPH_URL . "me?access_token={$accessToken}";
@@ -71,9 +65,6 @@ class FacebookGraphAPIUtil
         return json_decode($result);
     }
 
-    /**
-     *
-     */
     public function postFeed($id, $postData){
 
         $context["http"]["method"] = "POST";
