@@ -17,9 +17,11 @@ if(empty($code)) {
     header("Location: {$fb->getAuthUrl()}");
 }
 
+
 $accessToken = $fb->getAccessToken($code);
 
 $fbUser = $fb->getFbUserData($accessToken);
+$result['user'] = $fbUser;
 
 // post parameter
 // http://developers.facebook.com/docs/reference/api/post/
@@ -33,11 +35,12 @@ $p = array(
 );
 
 // user wall
-$fb->postFeed($fbUser->id, $p);
+$result['user_feed'] = $fb->postFeed($fbUser->id, $p);
+
 
 // page post
-$fb->postFeed($pageId, $p);
+$result['page_feed'] = $fb->postFeed($pageId, $p);
 
-mb_convert_variables('SJIS', 'UTF-8', $fbUser);
-var_dump($fbUser);
+mb_convert_variables('SJIS', 'UTF-8', $result);
 
+var_dump($result);

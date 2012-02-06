@@ -32,11 +32,11 @@ class FacebookGraphAPIUtil
 
     	$p = array(
             $this->appId,
-            $this->reqPerms,
             $this->callBackUrl,
+            $this->reqPerms,
         );
 
-        $url = vsprintf(FB_AUTH_URL . "?client_id=%s&scope=%s&responce_type=token&redirect_uri=%s", $p);
+        $url = vsprintf(FB_AUTH_URL . "?client_id=%s&redirect_uri=%s&scope=%s", $p);
         return $url;
     }
 
